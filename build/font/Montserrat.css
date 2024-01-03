@@ -1,0 +1,41 @@
+/** =================== MONTSERRAT =================== **/
+
+/** Montserrat Light **/
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 300;
+    font-style: normal;
+    src: url("Montserrat-Light.eot");
+    src: url("Montserrat-Light.woff2") format("woff2"),
+         url("Montserrat-Light.woff") format("woff"),
+         url("Montserrat-Light.ttf") format("truetype"),
+         url("Montserrat-Light.eot?#iefix") format("embedded-opentype");
+    font-display: swap;   
+}
+
+/** Montserrat Regular **/
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 400;
+    font-style: normal;
+    src: url("Montserrat-Regulat.eot");
+    src: url("Montserrat-Regular.woff2") format("woff2"),
+         url("Montserrat-Regular.woff") format("woff"),
+         url("Montserrat-Regular.ttf") format("truetype"),
+         url("Montserrat-Regular.eot?#iefix") format("embedded-opentype");
+    font-display: swap;     
+}
+
+/** Montserrat SemiBold **/
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 600;
+    font-style: normal;
+    src: url("Montserrat-SemiBold.eot");
+    src: url("Montserrat-SemiBold.woff2") format("woff2"),
+         url("Montserrat-SemiBold.woff") format("woff"),
+         url("Montserrat-SemiBold.ttf") format("truetype"),
+         url("Montserrat-SemiBold.eot?#iefix") format("embedded-opentype");
+    font-display: swap;
+
+}
