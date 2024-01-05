@@ -501,7 +501,7 @@ footer .info li svg {
     --font-xxs: 12px;
   }
   section {
-    padding: 90px 15px 30px 15px;
+    padding: 90px 15px;
     height: 100%;
     min-height: 100vh;
   }
