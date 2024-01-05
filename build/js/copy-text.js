@@ -1,3 +1,7 @@
-$('.copy-text').on("click", (event) => {
-  navigator.clipboard.writeText(event.target.textContent);
+$('.copy').on("click", (event) => {
+  navigator.clipboard.writeText($('.copy-text').text());
+  $('.copy').addClass("copied");
+  setTimeout(() => {
+    $('.copy').removeClass("copied");
+  }, 1000);
 });

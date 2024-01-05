@@ -82,7 +82,7 @@ a.link:hover .line, a.link.active .line {
 }
 
 section {
-  padding: 80px 60px;
+  padding: 60px;
   min-height: 700px;
 }
 
@@ -97,6 +97,7 @@ header {
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
   z-index: 2;
+  transition: var(--trans-slow);
 }
 header > * {
   width: 100%;
@@ -109,32 +110,25 @@ header .logo, header img {
 header .logo {
   gap: 15px;
   font-weight: var(--regular);
+  transition: var(--trans-slow);
 }
 header .logo img {
   width: auto;
+}
+header.reduce {
+  height: 60px;
+}
+header.reduce .logo {
+  gap: 7.5px;
 }
 header .ham-container {
   display: none;
 }
 header nav {
-  justify-content: center;
+  justify-content: flex-end;
   gap: 40px;
 }
 header nav .link .line {
-  background-color: var(--brown);
-}
-header nav .link:last-of-type {
-  display: none;
-}
-header .btn-container {
-  justify-content: flex-end;
-}
-header .btn-container a.btn-style {
-  color: var(--brown);
-  border-color: var(--brown);
-}
-header .btn-container a.btn-style:hover {
-  color: var(--white);
   background-color: var(--brown);
 }
 
@@ -153,7 +147,7 @@ header .btn-container a.btn-style:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.8) 100%);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.1) 20%, rgba(0, 0, 0, 0.8) 80%);
   z-index: 1;
 }
 #home .content {
@@ -268,12 +262,58 @@ header .btn-container a.btn-style:hover {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: var(--black);
-  opacity: 0.5;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.8) 70%);
 }
 #dove .content {
   position: relative;
   z-index: 1;
+  display: flex;
+}
+#dove .content .map {
+  display: flex;
+  width: 100%;
+  border-right: 1px solid var(--white);
+  padding: 15px 30px 15px 0px;
+}
+#dove .content .map iframe {
+  width: 100%;
+}
+#dove .content .text-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px 0px 15px 30px;
+}
+#dove .content .text-wrap .text {
+  display: flex;
+  flex-direction: column;
+}
+#dove .content .text-wrap .text > * {
+  color: var(--white);
+}
+#dove .content .text-wrap .text .title {
+  font-size: var(--font-l);
+}
+#dove .content .text-wrap .text .subtitle {
+  font-size: var(--font-m);
+  font-weight: var(--regular);
+  margin-bottom: 15px;
+}
+#dove .content .text-wrap .text .description {
+  font-weight: var(--light);
+  font-size: var(--font-s);
+  line-height: 30px;
+}
+#dove .content .text-wrap a.btn-style {
+  width: -moz-max-content;
+  width: max-content;
+  color: var(--white);
+  border-color: var(--white);
+}
+#dove .content .text-wrap a.btn-style:hover {
+  color: var(--black);
+  background-color: var(--white);
 }
 
 #contribuisci {
@@ -365,6 +405,40 @@ header .btn-container a.btn-style:hover {
   align-items: center;
   border: 1px solid #FFD872;
 }
+#contribuisci .content .iban-card .copy {
+  position: absolute;
+  top: 7.5px;
+  right: 7.5px;
+  fill: var(--brown);
+  opacity: 0.3;
+  width: 15px;
+  cursor: pointer;
+  transition: var(--trans);
+}
+#contribuisci .content .iban-card .copy svg {
+  width: 100%;
+  height: auto;
+  transition: var(--trans);
+}
+#contribuisci .content .iban-card .copy .copied {
+  position: absolute;
+  right: 0;
+  opacity: 0;
+  font-size: var(--font-xxs);
+  transition: var(--trans);
+}
+#contribuisci .content .iban-card .copy:hover {
+  opacity: 1;
+}
+#contribuisci .content .iban-card .copy.copied {
+  opacity: 1;
+}
+#contribuisci .content .iban-card .copy.copied svg {
+  opacity: 0;
+}
+#contribuisci .content .iban-card .copy.copied .copied {
+  opacity: 1;
+}
 #contribuisci .content .iban-card .title {
   position: absolute;
   top: -10px;
@@ -374,9 +448,8 @@ header .btn-container a.btn-style:hover {
   font-size: 16px;
 }
 #contribuisci .content .iban-card .iban {
-  cursor: copy;
   padding: 30px 60px;
-  font-size: 18px;
+  font-size: var(--font-s);
 }
 
 footer {
@@ -428,7 +501,7 @@ footer .info li svg {
     --font-xxs: 12px;
   }
   section {
-    padding: 80px 15px 30px 15px;
+    padding: 90px 15px 30px 15px;
     min-height: 100vh;
   }
   header {
@@ -450,12 +523,12 @@ footer .info li svg {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 7.5px;
+    gap: 5px;
     z-index: 2;
     transition: var(--trans-slow);
   }
   header .ham-container .ham .line {
-    height: 2px;
+    height: 1px;
     background-color: var(--brown);
     transition: var(--trans-slow);
   }
@@ -489,36 +562,81 @@ footer .info li svg {
     padding-top: 0px;
   }
   header nav .link:last-of-type {
-    display: flex;
     padding-bottom: 0px;
     border-bottom: none;
   }
-  header .btn-container {
+  header nav .link.active {
+    pointer-events: all;
+  }
+  header nav .link .line {
     display: none;
   }
   header.show-nav {
     height: 315.8px;
     padding-bottom: 250.8px;
   }
-  header.show-nav .ham {
-    transform: rotate(360deg);
-  }
   header.show-nav .ham .line:first-of-type {
-    transform: rotate(45deg) translate(3px, 3px);
+    transform: rotate(45deg) translateX(2px);
   }
   header.show-nav .ham .line:last-of-type {
     width: 30px;
-    transform: rotate(-45deg) translate(3px, -3px);
+    transform: rotate(-45deg) translate(4px, -2px);
   }
   header.show-nav nav {
     transform: translateX(0%);
     opacity: 1;
   }
   #home {
+    padding-top: 110px;
     align-items: flex-end;
   }
   #home:after {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.8) 100%);
+  }
+  #dove {
+    align-items: flex-start;
+  }
+  #dove:before {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.8) 70%);
+  }
+  #dove .content {
+    flex-direction: column;
+  }
+  #dove .content .map {
+    padding: 0 0 15px 0;
+    border-right: none;
+    border-bottom: 1px solid var(--white);
+    height: calc(50vh - 120px);
+  }
+  #dove .content .map iframe {
+    height: 100%;
+    width: 100%;
+  }
+  #dove .content .text-wrap {
+    padding: 15px 0 0 0;
+  }
+  #dove .content .text-wrap a.btn-style {
+    margin-top: 30px;
+  }
+  #contribuisci {
+    align-items: flex-start;
+  }
+  #contribuisci .content {
+    height: 100%;
+    justify-content: space-between;
+    gap: unset;
+  }
+  #contribuisci .content .iban-card {
+    width: 100%;
+  }
+  #contribuisci .content .iban-card .iban {
+    padding: 30px;
+  }
+  footer .text {
+    display: none;
+  }
+  footer .info {
+    padding: 0;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
